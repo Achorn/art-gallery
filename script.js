@@ -35,6 +35,11 @@ let imgMediumElement = document.getElementById("artMedium");
 backBtn.addEventListener("click", () => updateToPreviousImg());
 forwardBtn.addEventListener("click", () => updateToNextImg());
 
+addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") updateToPreviousImg();
+  if (event.key === "ArrowRight") updateToNextImg();
+});
+
 function updateToPreviousImg() {
   let newIndex;
   if (selectedImgIndex === 0) newIndex = images.length - 1;
